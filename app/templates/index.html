@@ -1,0 +1,59 @@
+{% extends "common.html" %}
+{% block content %}
+<div class="container-fluid">
+    {{msg}}
+{% if request.user.is_authenticated %}
+    Hallo {{request.user.username}}
+    <a href="page_2">
+    log out
+    </a>
+{% else %}
+        Please Login.
+{% endif %}
+    <div class="row">
+        <div class="col-2" style=" padding: 0px">
+            <div class="card card-body bg-light" align="left" style="height: 500px">
+                <a href="privet" type="button" class="btn btn-secondary" id = "button_privet">Gallary</a>
+                <button type="button" class="btn btn-secondary" id = "button_shop">Shop</button>
+            </div>
+        </div>
+        <div class="col-8" style="padding: 0px">
+            <div class="card card-body bg-light" align="center" style="height: 500px">
+                WELCOME IN OUR CRAFT BREWERY
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn Home btn-secondary" id = "button_home_page">Home</button>
+                    <button type="button" class="btn Our_production btn-secondary" id = "button_our_beer">Our Beer</button>
+                    <button type="button" class="btn About_Us btn-secondary" id = "button_about_us">About Us</button>
+                    <button type="button" class="btn Contacts btn-secondary" id = "button_contacts">Contacts</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-2" style="padding: 0px">
+            <div class="card card-body bg-light" align="center" style="height: 500px">
+             Please Login.
+            <form method="post" action="/index_2">
+               Your login <input type="text" name="your_name" id = "frame_your_name">
+               Your password <input type="password" name="your_password" id = "frame_your_password">
+                <input type="submit" id = "button_login">
+            </form>
+             In case you don't have your account yet, please register.
+             <form method = 'POST' action='register'>
+                Your login <input type="text" name="login" id = "frame_login">
+                Your password <input type="password" name="password" id = "frame_password">
+                <input type="submit" id = "button_register">
+             </form>
+              <a href="page_2">
+                  log out
+              </a>
+            </div>
+        </div>
+    </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12" style="padding: 0px">
+            <div class="card card-body bg-light" align="center" style="height: 150px">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
