@@ -9,7 +9,7 @@ def index(request):
     x = ""
     beer = Beer.objects.all()
     for i in beer:
-        x = x + i.Manufacturer + " " + str(i.Price) + "<br>"
+        x = x + i.Manufacturer + " " + str(i.Price) + " " + str(i.Beer_name) + "<br>"
     return HttpResponse(x)
 
 
