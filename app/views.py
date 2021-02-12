@@ -9,7 +9,8 @@ def index(request):
     x = ""
     beer = Beer.objects.all()
     for i in beer:
-        x = x + i.Manufacturer + " " + str(i.Price) + " " + str(i.Beer_name) + "<br>"
+        x = x + "This is beer from the Manufacturer: " + i.Manufacturer + ". The name of this beer is "\
+            + str(i.Beer_name) + ". Our price for you is " + str(i.Price) + " rubels." + "<br>"
     return HttpResponse(x)
 
 
