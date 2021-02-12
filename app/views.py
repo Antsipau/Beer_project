@@ -2,6 +2,8 @@ from app.models import *
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.contrib.auth import authenticate, login, logout
+from django.utils.translation import ugettext as _, activate
+from django.conf import settings
 
 def index(request):
     x = ""
@@ -11,9 +13,20 @@ def index(request):
     return HttpResponse(x)
 
 
-
 def indexhtml(request):
-    return render(request, 'index.html', {'msg':'This is home page.'})
+    activate('ru')
+
+    response = render(request, 'index.html', {'msg':'This is home page.', "photo1":Beer.objects.filter(id = 1)[0]})
+    response.set_cookie(
+        settings.LANGUAGE_COOKIE_NAME, "ru",
+        max_age=settings.LANGUAGE_COOKIE_AGE,
+        path=settings.LANGUAGE_COOKIE_PATH,
+        domain=settings.LANGUAGE_COOKIE_DOMAIN,
+        secure=settings.LANGUAGE_COOKIE_SECURE,
+        httponly=settings.LANGUAGE_COOKIE_HTTPONLY,
+        samesite=settings.LANGUAGE_COOKIE_SAMESITE,
+    )
+    return response
 
 def errorhtml(request):
     return render(request, 'error.html', {'msg':'Please Login.'})
@@ -75,3 +88,5 @@ def ajax_path2(request):
         response = {"exist":0
     }
     return JsonResponse(response)
+
+

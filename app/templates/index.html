@@ -1,5 +1,6 @@
 {% extends "common.html" %}
 {% block content %}
+{% load i18n %}
 <div class="container-fluid">
     {{msg}}
 {% if request.user.is_authenticated %}
@@ -19,7 +20,7 @@
         </div>
         <div class="col-8" style="padding: 0px">
             <div class="card card-body bg-light" align="center" style="height: 500px">
-                WELCOME IN OUR CRAFT BREWERY
+                {% trans "WELCOME" %} IN OUR CRAFT BREWERY
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <button type="button" class="btn Home btn-secondary" id = "button_home_page">Home</button>
                     <button type="button" class="btn Our_production btn-secondary" id = "button_our_beer">Our Beer</button>
@@ -28,6 +29,7 @@
                 </div>
             </div>
         </div>
+{#        <img src="{{photo1.Photo.url}}">#}
         <div class="col-2" style="padding: 0px">
             <div class="card card-body bg-light" align="center" style="height: 500px">
              Please Login.
