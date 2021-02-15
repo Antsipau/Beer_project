@@ -15,7 +15,7 @@ def index(request):
 
 
 def indexhtml(request):
-    activate('ru')
+    activate('en')
 
     response = render(request, 'index.html', {'msg':'This is home page.', "photo1":Beer.objects.filter(id = 1)[0]})
     response.set_cookie(
