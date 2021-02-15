@@ -13,13 +13,13 @@
 {% endif %}
     <div class="row">
         <div class="col-2" style=" padding: 0px">
-            <div class="card card-body bg-light" align="left" style="height: 500px">
+            <div class="card card-body bg-light" align="left" style="height: 690px">
                 <a href="privet" type="button" class="btn btn-secondary" id = "button_privet">Gallary</a>
                 <button type="button" class="btn btn-secondary" id = "button_shop">Shop</button>
             </div>
         </div>
         <div class="col-8" style="padding: 0px">
-            <div class="card card-body bg-light" align="center" style="height: 500px">
+            <div class="card card-body bg-light" align="center" style="height: 690px">
                 {% trans "WELCOME" %} IN OUR CRAFT BREWERY
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <button type="button" class="btn Home btn-secondary" id = "button_home_page">Home</button>
@@ -29,9 +29,9 @@
                 </div>
             </div>
         </div>
-{#        <img src="{{photo1.Photo.url}}">#}
+        <img src="{{photo1.Photo.url}}">
         <div class="col-2" style="padding: 0px">
-            <div class="card card-body bg-light" align="center" style="height: 500px">
+            <div class="card card-body bg-light" align="center" style="height: 690px">
              Please Login.
             <form method="post" action="/index_2">
                Your login <input type="text" name="your_name" id = "frame_your_name">
@@ -50,12 +50,12 @@
             </div>
         </div>
     </div>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12" style="padding: 0px">
-            <div class="card card-body bg-light" align="center" style="height: 150px">
-            </div>
-        </div>
-    </div>
-</div>
+{#<div class="container-fluid">#}
+{#    <div class="row">#}
+{#        <div class="col-12" style="padding: 0px">#}
+{#            <div class="card card-body bg-light" align="center" style="height: 150px">#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
 {% endblock %}
