@@ -17,7 +17,11 @@ def index(request):
 def indexhtml(request):
     activate('en')
 
-    response = render(request, 'index.html', {'msg':'This is home page.', "photo1":Beer.objects.filter(id = 1)[0]})
+    response = render(request, 'index.html', {'msg':'This is home page.', "photo1":Beer.objects.filter(id=1)[0],
+    "photo2": Beer.objects.filter(id=2)[0],
+    "photo3": Beer.objects.filter(id=3)[0],
+    "photo4": Beer.objects.filter(id=4)[0],
+    "photo5": Beer.objects.filter(id=5)[0],})
     response.set_cookie(
         settings.LANGUAGE_COOKIE_NAME, "ru",
         max_age=settings.LANGUAGE_COOKIE_AGE,
