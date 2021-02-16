@@ -18,7 +18,7 @@ def indexhtml(request):
     activate('en')
 
     response = render(request, 'index.html', {'msg':'This is home page.',
-    "photo1":Beer.objects.filter(id=1)[0],
+    "photo1": Beer.objects.filter(id=1)[0],
     "photo2": Beer.objects.filter(id=2)[0],
     "photo3": Beer.objects.filter(id=3)[0],
     "photo4": Beer.objects.filter(id=4)[0],
