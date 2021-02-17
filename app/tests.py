@@ -10,7 +10,7 @@ def client():
         {
             'id': 1,
             'manufacturer': 'Selfmade Brewery',
-            'price': 9.90
+            'price': 9.50
         }
     ).text
 # Create your tests here.
