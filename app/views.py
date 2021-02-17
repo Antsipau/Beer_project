@@ -77,8 +77,15 @@ def new_register(request):
 def show_form(request):
     return render(request, 'registration_form.html')
 
-def privet(request):
-    return render(request, 'gallary.html')
+def gallary_page(request):
+    response = render(request, 'gallary.html', {
+    "photo1": Beer.objects.filter(id=1)[0],
+    "photo2": Beer.objects.filter(id=2)[0],
+    "photo3": Beer.objects.filter(id=3)[0],
+    "photo4": Beer.objects.filter(id=4)[0],
+    "photo5": Beer.objects.filter(id=5)[0],
+    })
+    return response
 
 def ajax_path(request):
     response = {

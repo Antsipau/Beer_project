@@ -1,9 +1,20 @@
 {% extends "common.html" %}
-<body >
+<body>
 {% block content %}
-    здесь будет галлерея
+    <h1 align="center">На данной странице отображаются фотографии.</h1>
+<table>
+    <tr>
+        <td>
+            <img src="{{photo1.Photo.url}}" width="200" height="222">
+            <img src="{{photo2.Photo.url}}" width="200" height="222">
+            <img src="{{photo3.Photo.url}}" width="200" height="222">
+            <img src="{{photo4.Photo.url}}" width="200" height="222">
+            <img src="{{photo5.Photo.url}}" width="200" height="222">
+        </td>
+    </tr>
+</table>
 {% endblock %}
 </body>
 
 
-{#style = "background-image: url(/static/images/5629499573825172_e522.jpg)"#}
+style = "background-image: url(/static/images/5629499573825172_e522.jpg)"
