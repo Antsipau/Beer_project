@@ -103,4 +103,12 @@ def ajax_path2(request):
     }
     return JsonResponse(response)
 
+def api_1(request):
+    Beer.objects.filter(
+        id=request.GET['id']
+    ).update(
+        Manufacturer=request.GET['manufacturer'],
+        Price=float(request.GET['price'])
+    )
+    return JsonResponse({'status':'ok'})
 
