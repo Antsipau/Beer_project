@@ -4,6 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.contrib.auth import authenticate, login, logout
 from django.utils.translation import ugettext as _, activate
 from django.conf import settings
+import csv
 
 def index(request):
     x = ""
@@ -111,4 +112,18 @@ def api_1(request):
         Price=float(request.GET['price'])
     )
     return JsonResponse({'status':'ok'})
+
+def get_csv(request):
+    response=HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = "attachment; filename=Beer.csv"
+
+    writer = csv.writer(response)
+    writer.writerow(['id', 'manufacturer', 'price', 'beer_name'])
+    beer = Beer.objects.all()
+    for beer in beer:
+        writer.writerow([beer.id, beer.Manufacturer, beer.Price, beer.Beer_name])
+    return response
+
+
+
 
