@@ -6,7 +6,7 @@ alert ("You try to push id = button_contacts")
 $('#button_register').click(function (e){
     x = $("#frame_login").val()
     if (x.length < 3){
-        alert ("слишком маленький логин")
+        alert ("Your login is too short")
         e.preventDefault()
     }
 })
@@ -14,7 +14,7 @@ $('#button_register').click(function (e){
 $('#button_register').click(function (e){
     x = $("#frame_login").val()
     if (x.length < 3){
-        alert ("слишком маленький логин")
+        alert ("Your login is too short")
         e.preventDefault()
     }
 })
@@ -39,7 +39,7 @@ $('#frame_login').blur(function() {
         },
         function(response){
             if (response.exist == 1){
-                alert("такой пользователь уже существует")
+                alert("User already exists")
             }
         }
     );
