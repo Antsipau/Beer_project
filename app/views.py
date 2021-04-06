@@ -124,6 +124,11 @@ def get_csv(request):
         writer.writerow([beer.id, beer.Manufacturer, beer.Price, beer.Beer_name])
     return response
 
+def shop_page(request):
+    response = render(request, 'shop.html', {
+    })
+    return response
+
 
 
 
