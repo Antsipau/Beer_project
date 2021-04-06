@@ -145,6 +145,6 @@ def our_beer_page(request):
     return response
 
 def our_contacts_page(request):
-    response = render(request, 'cotacts.html', {
+    response = render(request, 'contacts.html', {
     })
     return response
