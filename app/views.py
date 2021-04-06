@@ -126,9 +126,22 @@ def get_csv(request):
 
 def shop_page(request):
     response = render(request, 'shop.html', {
+        "photo1": Beer.objects.filter(id=1)[0],
+        "photo2": Beer.objects.filter(id=2)[0],
+        "photo3": Beer.objects.filter(id=3)[0],
+        "photo4": Beer.objects.filter(id=4)[0],
+        "photo5": Beer.objects.filter(id=5)[0],
     })
     return response
 
-
+def our_beer_page(request):
+    response = render(request, 'our_beer.html', {
+        "photo1": Beer.objects.filter(id=1)[0],
+        "photo2": Beer.objects.filter(id=2)[0],
+        "photo3": Beer.objects.filter(id=3)[0],
+        "photo4": Beer.objects.filter(id=4)[0],
+        "photo5": Beer.objects.filter(id=5)[0],
+    })
+    return response
 
 
