@@ -1,7 +1,7 @@
 $(document).ready(function() {
-$('.Contacts').click(function (e){
-alert ("You try to push id = button_contacts")
-})
+//$('.Contacts').click(function (e){
+//alert ("You try to push id = button_contacts")
+//})
 
 $('#button_register').click(function (e){
     x = $("#frame_login").val()
@@ -19,17 +19,17 @@ $('#button_register').click(function (e){
     }
 })
 
-$('#button_about_us').click(function (e){
-    $.post(
-        "page_unknown",
-        {
-            "a": "Here"
-        },
-        function(response){
-            alert(response.message)
-        }
-    );
-})
+//$('#button_about_us').click(function (e){
+//    $.post(
+//        "page_unknown",
+//        {
+//            "a": "Here"
+//        },
+//        function(response){
+//            alert(response.message)
+//        }
+//    );
+//})
 
 $('#frame_login').blur(function() {
         $.post(
