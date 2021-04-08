@@ -148,3 +148,13 @@ def our_contacts_page(request):
     response = render(request, 'contacts.html', {
     })
     return response
+
+def add_to_shopping_cart(request):
+    response = render(request, 'shopping_cart_page.html', {
+    })
+    return response
+
+def cart(request):
+    response = render(request, 'shopping_cart.html', {
+    })
+    return response
