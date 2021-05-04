@@ -8,7 +8,8 @@ class Beer(models.Model):
     Photo = models.ImageField() #это для картинок
 
 class Cart(models.Model):
-    User = models.ManyToManyField(Beer)
+    beer = models.ManyToManyField(Beer)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 class Characteristic(models.Model):
     Style = models.CharField(max_length=100) #Это ии (Ale) или (Lager), также смешанный (Mixed)

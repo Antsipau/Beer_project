@@ -11,7 +11,7 @@ def index(request):
     beer = Beer.objects.all()
     for i in beer:
         x = x + "This is beer from the Manufacturer: " + i.Manufacturer + ". The name of this beer is "\
-            + str(i.Beer_name) + ". Our price for you is " + str(i.Price) + " rubels." + "<br>"
+            + i.Beer_name + ". Our price for you is " + str(i.Price) + " rubels." + "<br>"
     return HttpResponse(x)
 
 
@@ -150,9 +150,15 @@ def our_contacts_page(request):
     return response
 
 def add_to_shopping_cart(request):
-    response = render(request, 'shopping_cart_page.html', {
-    })
-    return response
+    beer=Beer.objects.filter(id=request.GET['id'])
+    user_cart = Cart.objects.filter(user=request.user)
+    if len(user_cart)==0:
+        cart = Cart(user=request.user)
+        cart.save()
+    else:
+        cart = user_cart[0]
+    cart.beer.add(beer[0])
+    return HttpResponseRedirect('shopping_cart')
 
 def cart(request):
     response = render(request, 'shopping_cart.html', {
